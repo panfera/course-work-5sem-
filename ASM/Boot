@@ -1,0 +1,96 @@
+#include <Uefi.h>
+
+
+extern EFI_BOOT_SERVICES *gBS;
+EFI_EXIT_BOOT_SERVICES     gOrigExitBootServices;
+
+
+
+EFI_STATUS
+EFIAPI
+ExitBootServicesHook(IN EFI_HANDLE ImageHandle, IN UINTN MapKey){
+
+  /* <hook related fun> */
+  /* Do fun hook-related stuff here */
+  /* </hook-related fun> */
+
+  /* Fix the pointer in the boot services table */
+  /* If you don't do this, sometimes your hook method will be called repeatedly, which you don't want */
+    gBS->ExitBootServices = gOrigExitBootServices;
+
+    /* Get the memory map */
+    UINTN MemoryMapSize;
+    EFI_MEMORY_DESCRIPTOR *MemoryMap;
+    UINTN LocalMapKey;
+    UINTN DescriptorSize;
+    UINT32 DescriptorVersion;
+    MemoryMap = NULL;
+    MemoryMapSize = 0;
+    EFI_STATUS status;
+  
+    do {  
+        status = gBS->GetMemoryMap(&MemoryMapSize, MemoryMap, &LocalMapKey, &DescriptorSize,&DescriptorVersion);
+        if (status == EFI_BUFFER_TOO_SMALL){
+           status = gBS->AllocatePool(EfiLoaderData, MemoryMapSize + 1, (void**)&MemoryMap);
+           status = gBS->GetMemoryMap(&MemoryMapSize, MemoryMap, &LocalMapKey, &DescriptorSize,&DescriptorVersion);      
+        }else {
+            /* Status is likely success - let the while() statement check success */
+        }
+        //gST->ConOut(L"This time through the memory map loop, status\n");
+        //SystemTable->ConOut->OutputString(SystemTable->ConOut, L"This time through the memory map loop\n");
+    
+        //SystemTable->ConOut->OutputString(SystemTable->ConOut, L"Hello World!\n");
+    } while (status != EFI_SUCCESS);
+
+    return gOrigExitBootServices(ImageHandle,LocalMapKey);
+    
+}
+
+EFI_STATUS EFIAPI UefiMain (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE  *SystemTable){
+  SystemTable->ConOut->OutputString(SystemTable->ConOut, L"Hello World!\n");
+  
+
+ /* Store off the original pointer and replace it with your own */
+    gOrigExitBootServices = gBS->ExitBootServices;
+    gBS->ExitBootServices = ExitBootServicesHook;
+
+  /* It's hooked! Return EFI_SUCCESS so your driver stays in memory */
+    return EFI_SUCCESS;
+}
+
+
+
+
+
+/*EFI_STATUS EFIAPI UefiMain (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE  *SystemTable){
+  SystemTable->ConOut->OutputString(SystemTable->ConOut, L"Hello World!\n");
+  
+
+  EFI_STATUS status;
+
+
+  UINTN size_memory_map =4048;
+  EFI_MEMORY_DESCRIPTOR memory_map;
+  UINTN key;
+  UINTN desc_size;
+  UINT32 desc_version;
+  status = SystemTable->BootServices->GetMemoryMap(&size_memory_map, &memory_map, &key, &desc_size, &desc_version);
+
+  if(status == EFI_SUCCESS){
+    SystemTable->ConOut->OutputString(SystemTable->ConOut, L"GetMemoryMap was received!\n");
+  }  
+  else if (status == EFI_BUFFER_TOO_SMALL) {
+    SystemTable->ConOut->OutputString(SystemTable->ConOut, L"EEFI_BUFFER_TOO_SMALL!\n");
+    status = SystemTable->BootServices->GetMemoryMap(&size_memory_map, &memory_map, &key, &desc_size, &desc_version);
+    if(status == EFI_SUCCESS){
+      SystemTable->ConOut->OutputString(SystemTable->ConOut, L"GetMemoryMap was received!!!\n");
+    } 
+
+  }
+  else if (status == EFI_INVALID_PARAMETER) {
+    SystemTable->ConOut->OutputString(SystemTable->ConOut, L"EFI_INVALID_PARAMETER!\n");
+    return EFI_SUCCESS;
+  }
+  //status = SystemTable->BootServices->ExitBootServices(ImageHandle, key);
+  return EFI_SUCCESS;
+}*/

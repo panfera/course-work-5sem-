@@ -1,0 +1,10 @@
+
+
+Architecture(s)  = X64
+Build target     = DEBUG
+
+Processing meta-data Toolchain        = GCC5
+.
+Active Platform          = /home/panfera/Workflow/edk2/BootloaderPkg/BootloaderPkg.dsc
+Active Module            = /home/panfera/Workflow/edk2/BootloaderPkg/Bootloader.inf
+. done!
