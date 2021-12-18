@@ -1,0 +1,4 @@
+/home/panfera/Workflow/edk2/MdeModulePkg/Library/SmmLockBoxLib/SmmLockBoxDxeLib.inf
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Library/SmmLockBoxLib/SmmLockBoxDxeLib/DEBUG/AutoGen.h
+/home/panfera/Workflow/edk2/MdeModulePkg/Library/SmmLockBoxLib/SmmLockBoxLibPrivate.h
+/home/panfera/Workflow/edk2/MdeModulePkg/Library/SmmLockBoxLib/SmmLockBoxDxeLib.c

@@ -1,0 +1,7 @@
+-I/home/panfera/Workflow/edk2/MdePkg/Library/BaseIoLibIntrinsic/X64
+-I/home/panfera/Workflow/edk2/MdePkg/Library/BaseIoLibIntrinsic
+-I/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic/DEBUG
+-I/home/panfera/Workflow/edk2/MdePkg
+-I/home/panfera/Workflow/edk2/MdePkg/Include
+-I/home/panfera/Workflow/edk2/MdePkg/Test/UnitTest/Include
+-I/home/panfera/Workflow/edk2/MdePkg/Include/X64

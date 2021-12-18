@@ -1,0 +1,12 @@
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib/OUTPUT/Ia32/InternalGetSpinLockProperties.obj:  /home/panfera/Workflow/edk2/MdePkg/Library/BaseSynchronizationLib/Ia32/InternalGetSpinLockProperties.c \
+ /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib/DEBUG/AutoGen.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Base.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/X64/ProcessorBind.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Library/PcdLib.h \
+ /home/panfera/Workflow/edk2/MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLibInternals.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Library/SynchronizationLib.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Library/BaseLib.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Library/DebugLib.h \
+ /home/panfera/Workflow/edk2/MdePkg/Include/Library/TimerLib.h
+
+# Updated 

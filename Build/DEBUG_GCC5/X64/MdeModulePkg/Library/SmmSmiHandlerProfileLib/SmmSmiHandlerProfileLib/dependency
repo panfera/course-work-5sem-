@@ -1,0 +1,7 @@
+
+
+-include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Library/SmmSmiHandlerProfileLib/SmmSmiHandlerProfileLib/OUTPUT/SmmSmiHandlerProfileLib.obj.deps
+
+-include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Library/SmmSmiHandlerProfileLib/SmmSmiHandlerProfileLib/OUTPUT/MmSmiHandlerProfileLib.obj.deps
+
+               

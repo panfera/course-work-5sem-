@@ -1,0 +1,1 @@
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Acpi/SmmS3SaveState/SmmS3SaveState/GNUmakefile

@@ -1,0 +1,15 @@
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciLib.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciIo.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciBus.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciDeviceSupport.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/ComponentName.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciCommand.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciResourceSupport.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciEnumeratorSupport.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciEnumerator.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciOptionRomSupport.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciDriverOverride.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciPowerManagement.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciRomTable.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/PciHotPlugSupport.obj
+/home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe/OUTPUT/AutoGen.obj
