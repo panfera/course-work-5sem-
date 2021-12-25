@@ -1,3 +1,3 @@
-fasm initcode.asm && rm initcode.h && xxd -i initcode.bin >> initcode.h && cd .. && . edksetup.sh && build && cd ./BootloaderPkg && cp ./Build/DEBUG_GCC5/X64/Bootloader.efi ../../Assembler/QEMU-UEFI/vdisk/test.efi && cd ../../Assembler/QEMU-UEFI && ./run.sh
+make && objcopy -O binary code.elf code.bin && rm code.h && xxd -i code.bin >> code.h && fasm initcode.asm && rm initcode.h && xxd -i initcode.bin >> initcode.h && cd .. && . edksetup.sh && build && cd ./BootloaderPkg && cp ./Build/DEBUG_GCC5/X64/Bootloader.efi ./QEMU-UEFI/vdisk/test.efi && cd ./QEMU-UEFI && ./run.sh
 #fasm initcode.asm && rm initcode.h && xxd -i initcode.bin >> initcode.h &&
 #nasm -f bin -o initcode.bin initcode.asm

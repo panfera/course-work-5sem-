@@ -55,6 +55,7 @@
  /home/panfera/Workflow/edk2/MdePkg/Include/IndustryStandard/PeImage.h \
  /home/panfera/Workflow/edk2/MdePkg/Include/Pi/PiS3BootScript.h \
  /home/panfera/Workflow/edk2/MdePkg/Include/Protocol/MpService.h \
- /home/panfera/Workflow/edk2/BootloaderPkg/initcode.h
+ /home/panfera/Workflow/edk2/BootloaderPkg/initcode.h \
+ /home/panfera/Workflow/edk2/BootloaderPkg/code.h
 
 # Updated 

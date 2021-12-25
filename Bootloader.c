@@ -8,6 +8,7 @@
 #include <Protocol/MpService.h>
 #include <string.h>
 #include "initcode.h"
+#include "code.h"
 
 EFI_GUID  gEfiMpServiceProtocolGuid = 
 {0x3fdda605,0xa76e,0x4f46, {0xad,0x29,0x12,0xf4, 0x53,0x1b,0x3d,0x08}};
@@ -15,6 +16,7 @@ EFI_GUID  gEfiMpServiceProtocolGuid =
 extern EFI_BOOT_SERVICES *gBS;
 
 static void *ptr = (void*) 0x10000;
+static void *ptr_c_code = (void*) 0x1500000;
 
 const CHAR16 *memory_types[] = 
 {
@@ -120,7 +122,7 @@ while(offset < endOfMemoryMap)
   Print(L"0x%11X ", desc->NumberOfPages);
   Print(L"0x%10X\n", desc->Attribute);
   if (counter == 20)
-    status = gBS->Stall(1000000);
+    status = gBS->Stall(100000);
  /* Print(L"%-26s ", memory_types[desc->Type]); 
   Print(L"0x%9X ", desc->PhysicalStart);
   Print(L"0x%9X ", desc->VirtualStart);
@@ -132,7 +134,7 @@ while(offset < endOfMemoryMap)
   counter++;
 } 
 
-status = gBS->Stall(1000000);
+status = gBS->Stall(100000);
 
 uint64_t memorySize = totalPages * 4096;
 Print(L"Count Pages: %d \n", totalPages);
@@ -159,7 +161,7 @@ EFI_PROCESSOR_INFORMATION InfoBuffer[NumberOfProcessors];
 
 for (UINTN i = 0; i < NumberOfProcessors; ++i){
   status = MP->GetProcessorInfo(MP, i, InfoBuffer + i);
-  Print( L"Prcoessor #%d: ACPI Processor ID = 0x%lX, Flags = 0x%x, Package = 0x%x, Core = 0x%x, Thread = 0x%x \n", 
+  Print( L"Prcoessor #%d: ACPI Processor ID = 0x%lX, Flags = 0x%x, Package = 0x%x, Core = 0x%x, \nThread = 0x%x \n", 
     i,
     InfoBuffer[i].ProcessorId, 
     InfoBuffer[i].StatusFlag,
@@ -174,6 +176,7 @@ for (UINTN i = 0; i < NumberOfProcessors; ++i){
 
 
 gBS->CopyMem((VOID*)ptr, (VOID*)initcode_bin, initcode_bin_len);
+gBS->CopyMem((VOID*)ptr_c_code, (VOID*)code_bin, code_bin_len);
 
 //mymemcpy (ptr, initcode_bin, initcode_bin_len );
 

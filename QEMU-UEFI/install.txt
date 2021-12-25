@@ -1,0 +1,4 @@
+# ovmf (Open Virtual Mashine Firmvare) - Образ EFI биос
+# инсталлируется в /usr/share
+
+$ sudo apt install qemu ovmf

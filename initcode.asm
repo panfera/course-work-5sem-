@@ -202,12 +202,7 @@ xor rsi, rsi
 mov ax,VIDEO_selector
 mov gs,ax
 
-m1:
-    mov cx, 0xFFFF
-    mov edi, 0x0
-    lp:
-        inc word[gs:edi]
-        inc di
-    loop lp
-jmp m1
+mov rsp, 0x2000000
+mov rax, 0x1500000
+jmp rax
 
