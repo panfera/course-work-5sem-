@@ -1,0 +1,7 @@
+
+
+-include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Metronome/Metronome/OUTPUT/Metronome.obj.deps
+
+-include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Metronome/Metronome/OUTPUT/AutoGen.obj.deps
+
+               
