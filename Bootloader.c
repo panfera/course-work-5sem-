@@ -1,9 +1,7 @@
 #include <Uefi.h>
-
 #include <Library/UefiLib.h>
 #include <Library/PrintLib.h>
 #include <stdint.h>
-
 #include <Pi/PiDxeCis.h>
 #include <Protocol/MpService.h>
 #include <string.h>
@@ -37,33 +35,7 @@ const CHAR16 *memory_types[] =
   L"Persistent",
   L"Unaccepted",
   L"MaxMemory"
-  /*L"EfiReservedMemoryType",
-  L"EfiLoaderCode",
-  L"EfiLoaderData",
-  L"EfiBootServicesCode",
-  L"EfiBootServicesData",
-  L"EfiRuntimeServicesCode",
-  L"EfiRuntimeServicesData",
-  L"EfiConventionalMemory",
-  L"EfiUnusableMemory",
-  L"EfiACPIReclaimMemory",
-  L"EfiACPIMemoryNVS",
-  L"EfiMemoryMappedIO",
-  L"EfiMemoryMappedIOPortSpace",
-  L"EfiPalCode",
-  L"EfiPersistentMemory",
-  L"EfiUnacceptedMemoryType",
-  L"EfiMaxMemoryType"*/
 };
-
-/*void mymemcpy(void* dest, const void* src, unsigned int bytes)
-{
-    unsigned int i;
-    char* cdest = (char*)dest;
-    const char* csrc = (char*)src;
-    for (i = 0; i < bytes; ++i)
-        cdest[i] = csrc[i];
-}*/
 
 EFI_STATUS EFIAPI UefiMain (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE  *SystemTable){
   SystemTable->ConOut->OutputString(SystemTable->ConOut, L"Hello World!\n");
@@ -108,7 +80,6 @@ uint64_t totalPages = 0;
 
 EFI_MEMORY_DESCRIPTOR *desc = NULL;
 
-//Print(L"%-26s %-11s %-11s %-13s %-12s\n", L"Type", L"PhysStart", L"VirtStart", L"Pages(4Kib)", L"Attributes");
 Print(L"%-17s %-15s %-14s %-13s %-12s\n", L"Type", L"PhysicalStart", L"VirtualStart", L"Pages(4Kib)", L"Attributes");
 
 while(offset < endOfMemoryMap)
@@ -122,19 +93,14 @@ while(offset < endOfMemoryMap)
   Print(L"0x%11X ", desc->NumberOfPages);
   Print(L"0x%10X\n", desc->Attribute);
   if (counter == 20)
-    status = gBS->Stall(100000);
- /* Print(L"%-26s ", memory_types[desc->Type]); 
-  Print(L"0x%9X ", desc->PhysicalStart);
-  Print(L"0x%9X ", desc->VirtualStart);
-  Print(L"0x%11X ", desc->NumberOfPages);
-  Print(L"0x%10X\n", desc->Attribute);*/
+    status = gBS->Stall(1000000);
 
   totalPages += desc->NumberOfPages;
   offset += DescriptorSize;
   counter++;
 } 
 
-status = gBS->Stall(100000);
+status = gBS->Stall(1000000);
 
 uint64_t memorySize = totalPages * 4096;
 Print(L"Count Pages: %d \n", totalPages);
@@ -178,8 +144,6 @@ for (UINTN i = 0; i < NumberOfProcessors; ++i){
 gBS->CopyMem((VOID*)ptr, (VOID*)initcode_bin, initcode_bin_len);
 gBS->CopyMem((VOID*)ptr_c_code, (VOID*)code_bin, code_bin_len);
 
-//mymemcpy (ptr, initcode_bin, initcode_bin_len );
-
 status = SystemTable->BootServices->ExitBootServices(ImageHandle, MapKey);
 
 
@@ -205,7 +169,6 @@ for (UINTN i = 0; i < NumberOfProcessors; ++i){
 }
 
  while (1){};
-
 
 return EFI_SUCCESS;
 }
