@@ -1,7 +1,0 @@
-
-
--include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Library/VarCheckPolicyLib/VarCheckPolicyLib/OUTPUT/VarCheckPolicyLib.obj.deps
-
--include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Library/VarCheckPolicyLib/VarCheckPolicyLib/OUTPUT/VarCheckPolicyLibTraditional.obj.deps
-
-               
