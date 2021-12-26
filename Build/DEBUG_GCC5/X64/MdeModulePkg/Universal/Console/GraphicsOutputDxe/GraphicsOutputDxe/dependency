@@ -1,9 +1,0 @@
-
-
--include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Console/GraphicsOutputDxe/GraphicsOutputDxe/OUTPUT/GraphicsOutput.obj.deps
-
--include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Console/GraphicsOutputDxe/GraphicsOutputDxe/OUTPUT/ComponentName.obj.deps
-
--include /home/panfera/Workflow/edk2/BootloaderPkg/Build/DEBUG_GCC5/X64/MdeModulePkg/Universal/Console/GraphicsOutputDxe/GraphicsOutputDxe/OUTPUT/AutoGen.obj.deps
-
-               

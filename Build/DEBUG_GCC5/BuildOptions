@@ -1,3 +1,0 @@
-gCommandLineDefines: {'ARCH': 'X64'}
-BuildOptionPcd: []
-Active Platform: /home/panfera/Workflow/edk2/BootloaderPkg/BootloaderPkg.dsc
